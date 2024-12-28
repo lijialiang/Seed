@@ -29,14 +29,22 @@
 {{/if}} --}}
 
 {{~#if page_type == "product"}}
-  {{#for product.variants as |variant|}}
-  {{#if variant.sku == product.selected_or_first_available_variant.sku}}
-  <meta property="og:price:amount" content="{{ divide variant.price 100 }}" />
-  <meta property="og:price:currency" content="{{ cart.currency.iso_code }}" />
+  {{#if product.selected_or_first_available_variant.sku}}
+    {{#for product.variants as |variant|}}
+    {{#if variant.sku == product.selected_or_first_available_variant.sku}}
+    <meta property="og:price:amount" content="{{ divide variant.price 100 }}" />
+    <meta property="og:price:currency" content="{{ cart.currency.iso_code }}" />
+    <meta property="product:price:amount" content="{{ divide variant.price 100 }}" />
+    <meta property="product:price:currency" content="{{ cart.currency.iso_code }}" />
+    {{/if}}
+    {{/for}}
+  {{else}}
+    <meta property="og:price:amount" content="{{ money_without_currency product.price }}" />
+    <meta property="og:price:currency" content="{{ cart.currency.iso_code }}" />
+    <meta property="product:price:amount" content="{{ money_without_currency product.price }}" />
+    <meta property="product:price:currency" content="{{ cart.currency.iso_code }}" />
   {{/if}}
-  {{/for}}
 {{/if}}
-
 
 {{~#if settings.social_twitter_link}}
   <meta name="twitter:site" content="{{append '@' (last (split settings.social_twitter_link 'twitter.com/'))}}" />
