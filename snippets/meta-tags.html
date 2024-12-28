@@ -29,9 +29,9 @@
 {{/if}} --}}
 
 {{~#if page_type == "product"}}
-  {{#if product.selected_or_first_available_variant.sku}}
+  {{~#if product.selected_or_first_available_variant.sku}}
     {{#for product.variants as |variant|}}
-    {{#if variant.sku == product.selected_or_first_available_variant.sku}}
+    {{~#if variant.sku == product.selected_or_first_available_variant.sku}}
     <meta property="og:price:amount" content="{{ divide variant.price 100 }}" />
     <meta property="og:price:currency" content="{{ cart.currency.iso_code }}" />
     <meta property="product:price:amount" content="{{ divide variant.price 100 }}" />
