@@ -367,7 +367,7 @@
             "availability" : "http://schema.org/{{#if variant.available}}InStock{{else}}OutOfStock{{/if}}",
             "price" : "{{ divide variant.price 100 }}",
             "priceCurrency" : "{{ cart.currency.iso_code }}",
-            "url": "{{{ append request.origin url }}}"
+            "url": "{{{ append request.origin variant.url }}}"
           }{{#unless forloop.last}},{{/unless}}
         {{/for}}
       ]
