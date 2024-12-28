@@ -1,4 +1,8 @@
-<h1>xxx: {{product.selected_or_first_available_variant.sku}}</h1>
+{{#if product.selected_or_first_available_variant.sku}}
+    <h1>xxx: {{product.selected_or_first_available_variant.sku}}</h1>
+{{else}}
+    <h1>yyyyy</h1>
+{{/if}}
 
 {{assign "product_form_id" (append "product-form-" section.id)}}
 {{assign "variant_images" (map (where product.images "attached_to_variant" true) "src")}}
