@@ -1,9 +1,9 @@
 123123
-{{#paginate collection.products by=5}}
+
   {{#each collection.products as |product|}}
     {{ product.title }}
   {{/each}}
-{{/paginate}}
+
 
 {{snippet "stylesheet" href=(asset_url "section-collection-product-list.css")}}
 {{snippet "stylesheet" href=(asset_url "component-card.css")}}
