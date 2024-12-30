@@ -1,9 +1,9 @@
-123123
 
+<h1>
   {{#each collection.products as |product|}}
-    {{ product.title }}
+    <p>111-{{ product.title }}</p>
   {{/each}}
-
+<h1>
 
 {{snippet "stylesheet" href=(asset_url "section-collection-product-list.css")}}
 {{snippet "stylesheet" href=(asset_url "component-card.css")}}
