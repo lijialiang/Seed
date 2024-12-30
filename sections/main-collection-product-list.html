@@ -1,12 +1,12 @@
 
-<h1>
+<div>
 {{#paginate collection.products by=1}}
   {{#each collection.products as |product|}}
-    <p>111-{{ product.title }}</p>
+    <h1>111-{{ product.title }}</h1>
   {{/each}}
-  123{{snippet "pagination" paginate=paginate anchor=""}}
+  {{snippet "pagination" paginate=paginate anchor=""}}
 {{/paginate}}
-<h1>
+</div>
 
 {{snippet "stylesheet" href=(asset_url "section-collection-product-list.css")}}
 {{snippet "stylesheet" href=(asset_url "component-card.css")}}
